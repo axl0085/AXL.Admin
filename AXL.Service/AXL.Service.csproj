@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\AXL.Common\AXL.Common.csproj" />
+	  <ProjectReference Include="..\AXL.Model\AXL.Model.csproj" />
+	  <ProjectReference Include="..\AXL.Repository\AXL.Repository.csproj" />
+	</ItemGroup>
+
+</Project>

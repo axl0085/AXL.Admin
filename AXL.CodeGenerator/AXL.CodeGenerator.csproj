@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="JinianNet.JNTemplate" Version="2.3.2" />
+		<PackageReference Include="SqlSugarCoreNoDrive" Version="5.1.3.35" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\AXL.Common\AXL.Common.csproj" />
+	  <ProjectReference Include="..\AXL.Infrastructure\AXL.Infrastructure.csproj" />
+	  <ProjectReference Include="..\AXL.Model\AXL.Model.csproj" />
+	</ItemGroup>
+</Project>

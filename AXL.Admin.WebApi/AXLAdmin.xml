@@ -1,0 +1,1431 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AXL.Admin.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:AXL.Admin.WebApi.Controllers.BaseController.SUCCESS(System.Object,System.String)">
+            <summary>
+            返回成功封装
+            </summary>
+            <param name="data"></param>
+            <param name="timeFormatStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.BaseController.ToResponse(AXL.Infrastructure.Model.ApiResult,System.String)">
+            <summary>
+            json输出带时间格式的
+            </summary>
+            <param name="apiResult"></param>
+            <param name="timeFormatStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.BaseController.ExportExcel(System.String,System.String)">
+            <summary>
+            导出Excel
+            </summary>
+            <param name="path">完整文件路径</param>
+            <param name="fileName">带扩展文件名</param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.BaseController.ToJson(System.Int64)">
+            <summary>
+            响应返回结果
+            </summary>
+            <param name="rows">受影响行数</param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.BaseController.GetApiResult(AXL.Infrastructure.CustomException.ResultCode,System.Object)">
+            <summary>
+            全局Code使用
+            </summary>
+            <param name="resultCode"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.BaseController.ExportExcel``1(System.Collections.Generic.List{``0},System.String,System.String)">
+            <summary>
+            导出Excel
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="sheetName"></param>
+            <param name="fileName"></param>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.BaseController.ExportExcelMini(System.Collections.Generic.Dictionary{System.String,System.Object},System.String)">
+            <summary>
+            导出多个工作表(Sheet)
+            </summary>
+            <param name="sheets"></param>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.BaseController.DownloadImportTemplate``1(System.Collections.Generic.List{``0},System.IO.Stream,System.String)">
+            <summary>
+            下载导入模板
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="stream"></param>
+            <param name="fileName">下载文件名</param>
+            <returns></returns>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Controllers.CommonController">
+            <summary>
+            公共模块
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.CommonController.Index">
+            <summary>
+            hello
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.CommonController.SendEmail(AXL.Infrastructure.Model.SendEmailDto)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="sendEmailVo">请求参数接收实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.CommonController.UploadFile(AXL.Admin.WebApi.Controllers.UploadDto,AXL.Infrastructure.Enums.StoreType)">
+            <summary>
+            存储文件
+            </summary>
+            <param name="uploadDto">自定义文件名</param>
+            <param name="storeType">上传类型1、保存到本地 2、保存到阿里云</param>
+            <returns></returns>
+        </member>
+        <member name="P:AXL.Admin.WebApi.Controllers.UploadDto.FileName">
+            <summary>
+            自定文件名
+            </summary>
+        </member>
+        <member name="P:AXL.Admin.WebApi.Controllers.UploadDto.FileDir">
+            <summary>
+            存储目录
+            </summary>
+        </member>
+        <member name="P:AXL.Admin.WebApi.Controllers.UploadDto.FileNameType">
+            <summary>
+            文件名生成类型 1 原文件名 2 自定义 3 自动生成
+            </summary>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Controllers.System.ArticleCategoryController">
+            <summary>
+            文章目录Controller
+            </summary>
+        </member>
+        <member name="F:AXL.Admin.WebApi.Controllers.System.ArticleCategoryController._ArticleCategoryService">
+            <summary>
+            文章目录接口
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.ArticleCategoryController.QueryArticleCategory(AXL.Model.System.Dto.ArticleCategoryQueryDto)">
+            <summary>
+            查询文章目录列表
+            </summary>
+            <param name="parm"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.ArticleCategoryController.QueryTreeArticleCategory(AXL.Model.System.Dto.ArticleCategoryQueryDto)">
+            <summary>
+            查询文章目录列表树
+            </summary>
+            <param name="parm"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.ArticleCategoryController.GetArticleCategory(System.Int32)">
+            <summary>
+            查询文章目录详情
+            </summary>
+            <param name="CategoryId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.ArticleCategoryController.AddArticleCategory(AXL.Model.System.Dto.ArticleCategoryDto)">
+            <summary>
+            添加文章目录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.ArticleCategoryController.UpdateArticleCategory(AXL.Model.System.Dto.ArticleCategoryDto)">
+            <summary>
+            更新文章目录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.ArticleCategoryController.DeleteArticleCategory(System.String)">
+            <summary>
+            删除文章目录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.ArticleCategoryController.Export(AXL.Model.System.Dto.ArticleCategoryQueryDto)">
+            <summary>
+            导出文章目录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.ArticleCategoryController.CategoryList">
+            <summary>
+            获取文章目录,前端没用到
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Controllers.System.ArticleController">
+            <summary>
+            文章管理
+            </summary>
+        </member>
+        <member name="F:AXL.Admin.WebApi.Controllers.System.ArticleController._ArticleService">
+            <summary>
+            文章接口
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.ArticleController.Query(AXL.Model.System.Dto.ArticleQueryDto)">
+            <summary>
+            查询文章列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.ArticleController.QueryNew">
+            <summary>
+            查询最新文章列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.ArticleController.Get(System.Int32)">
+            <summary>
+            查询文章详情
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.ArticleController.Create(AXL.Model.System.Article)">
+            <summary>
+            添加文章
+            </summary>
+            <remarks>
+            例子:
+            Get api/Values/1
+            </remarks>
+            <param name="parm">文章表</param>
+            <returns></returns>
+            <exception cref="T:AXL.Infrastructure.CustomException.CustomException"></exception>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.ArticleController.Update(AXL.Model.System.Article)">
+            <summary>
+            更新文章
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.ArticleController.Delete(System.Int32)">
+            <summary>
+            删除文章
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Controllers.System.CodeGeneratorController">
+            <summary>
+            代码生成
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.CodeGeneratorController.GetListDataBase">
+            <summary>
+            获取所有数据库的信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.CodeGeneratorController.FindListTable(System.String,System.String,AXL.Model.PagerInfo)">
+             <summary>
+            获取所有表根据数据库名
+             </summary>
+             <param name="dbName">数据库名</param>
+             <param name="tableName">表名</param>
+             <param name="pager">分页信息</param>
+             <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.CodeGeneratorController.GetGenTable(System.String,AXL.Model.PagerInfo)">
+            <summary>
+            查询生成表数据
+            </summary>
+            <param name="tableName">表名</param>
+            <param name="pagerInfo">分页信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.CodeGeneratorController.GetColumnList(System.Int64)">
+            <summary>
+            修改代码生成业务查询
+            </summary>
+            <param name="tableId">genTable表id</param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.CodeGeneratorController.GetTableColumnList(System.Int64)">
+            <summary>
+            根据表id查询表列
+            </summary>
+            <param name="tableId">genTable表id</param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.CodeGeneratorController.Remove(System.String)">
+            <summary>
+            删除代码生成
+            </summary>
+            <param name="tableIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.CodeGeneratorController.ImportTableSave(System.String,System.String)">
+            <summary>
+            导入表结构（保存）
+            </summary>
+            <param name="tables"></param>
+            <param name="dbName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.CodeGeneratorController.EditSave(AXL.Model.System.Dto.GenTableDto)">
+            <summary>
+            修改保存代码生成业务
+            </summary>
+            <param name="genTableDto">请求参数实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.CodeGeneratorController.Preview(System.Int64,System.Int32)">
+            <summary>
+            预览代码
+            </summary>
+            <param name="tableId"></param>
+            <param name="VueVersion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.CodeGeneratorController.CodeGenerate(AXL.CodeGenerator.Model.GenerateDto)">
+            <summary>
+            生成代码（下载方式）
+            </summary>
+            <param name="dto">数据传输对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.CodeGeneratorController.SynchDb(System.String,System.Int64)">
+            <summary>
+            同步数据库
+            </summary>
+            <param name="tableId"></param>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Controllers.System.CommonLangController">
+            <summary>
+            多语言配置Controller
+            </summary>
+        </member>
+        <member name="F:AXL.Admin.WebApi.Controllers.System.CommonLangController._CommonLangService">
+            <summary>
+            多语言配置接口
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.CommonLangController.QueryCommonLang(AXL.Model.System.Dto.CommonLangQueryDto)">
+            <summary>
+            查询多语言配置列表
+            </summary>
+            <param name="parm"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.CommonLangController.QueryCommonLangs(System.String)">
+            <summary>
+            查询多语言配置列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.CommonLangController.GetCommonLang(System.Int64)">
+            <summary>
+            查询多语言配置详情
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.CommonLangController.GetCommonLangByKey(System.String)">
+            <summary>
+            查询多语言配置详情
+            </summary>
+            <param name="langKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.CommonLangController.UpdateCommonLang(AXL.Model.System.Dto.CommonLangDto)">
+            <summary>
+            更新多语言配置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.CommonLangController.DeleteCommonLang(System.String)">
+            <summary>
+            删除多语言配置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.CommonLangController.Export(AXL.Model.System.Dto.CommonLangQueryDto)">
+            <summary>
+            导出多语言配置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Controllers.System.monitor.MonitorController">
+            <summary>
+            系统监控
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.monitor.MonitorController.cache">
+            <summary>
+            获取缓存监控数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.monitor.MonitorController.server">
+            <summary>
+            获取服务器信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Controllers.System.monitor.SysLogininforController">
+            <summary>
+            系统访问记录
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.monitor.SysLogininforController.LoignLogList(AXL.Model.System.SysLogininfor,AXL.Model.PagerInfo)">
+            <summary>
+            查询登录日志
+            </summary>
+            <param name="sysLogininfoDto"></param>
+            <param name="pagerInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.monitor.SysLogininforController.CleanLoginInfo">
+            <summary>
+            清空登录日志
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.monitor.SysLogininforController.Remove(System.String)">
+            <summary>
+            </summary>
+            <param name="infoIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.monitor.SysLogininforController.Export(AXL.Model.System.SysLogininfor)">
+            <summary>
+            登录日志导出
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Controllers.System.monitor.SysOperlogController">
+            <summary>
+            操作日志记录
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.monitor.SysOperlogController.OperList(AXL.Model.System.Dto.SysOperLogDto)">
+            <summary>
+            查询操作日志
+            </summary>
+            <param name="sysOperLog"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.monitor.SysOperlogController.Remove(System.String)">
+            <summary>
+            删除操作日志
+            </summary>
+            <param name="operIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.monitor.SysOperlogController.ClearOperLog">
+            <summary>
+            清空操作日志
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.monitor.SysOperlogController.Export(AXL.Model.System.Dto.SysOperLogDto)">
+            <summary>
+            导出操作日志
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Controllers.System.SysConfigController">
+            <summary>
+            参数配置Controller
+            </summary>
+        </member>
+        <member name="F:AXL.Admin.WebApi.Controllers.System.SysConfigController._SysConfigService">
+            <summary>
+            参数配置接口
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysConfigController.QuerySysConfig(AXL.Model.System.Dto.SysConfigQueryDto)">
+            <summary>
+            查询参数配置列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysConfigController.GetSysConfig(System.Int32)">
+            <summary>
+            查询参数配置详情
+            </summary>
+            <param name="ConfigId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysConfigController.GetConfigKey(System.String)">
+            <summary>
+            根据参数键名查询参数值
+            </summary>
+            <param name="configKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysConfigController.AddSysConfig(AXL.Model.System.Dto.SysConfigDto)">
+            <summary>
+            添加参数配置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysConfigController.UpdateSysConfig(AXL.Model.System.Dto.SysConfigDto)">
+            <summary>
+            更新参数配置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysConfigController.DeleteSysConfig(System.String)">
+            <summary>
+            删除参数配置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Controllers.System.SysDeptController">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysDeptController.List(AXL.Model.System.SysDept)">
+            <summary>
+            获取部门列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysDeptController.ExcludeChild(System.Int64)">
+            <summary>
+            查询部门列表（排除节点）
+            </summary>
+            <param name="deptId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysDeptController.TreeSelect(AXL.Model.System.SysDept)">
+            <summary>
+            获取部门下拉树列表
+            </summary>
+            <param name="dept"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysDeptController.RoleMenuTreeselect(System.Int32)">
+            <summary>
+            获取角色部门信息
+            加载对应角色部门列表树
+            </summary>
+            <param name="roleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysDeptController.GetInfo(System.Int64)">
+            <summary>
+            根据部门编号获取详细信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysDeptController.Add(AXL.Model.System.SysDept)">
+            <summary>
+            新增部门
+            </summary>
+            <param name="dept"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysDeptController.Update(AXL.Model.System.SysDept)">
+            <summary>
+            修改部门
+            </summary>
+            <param name="dept"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysDeptController.Remove(System.Int64)">
+            <summary>
+            删除部门
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Controllers.System.SysDictDataController">
+            <summary>
+            数据字典信息
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysDictDataController.List(AXL.Model.System.SysDictData,AXL.Model.PagerInfo)">
+            <summary>
+            搜索
+            </summary>
+            <param name="dictData"></param>
+            <param name="pagerInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysDictDataController.DictType(System.String)">
+            <summary>
+            根据字典类型查询字典数据信息
+            </summary>
+            <param name="dictType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysDictDataController.DictTypes(System.Collections.Generic.List{AXL.Model.System.Dto.SysdictDataDto})">
+            <summary>
+            根据字典类型查询字典数据信息
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysDictDataController.GetInfo(System.Int64)">
+            <summary>
+            查询字典数据详细
+            </summary>
+            <param name="dictCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysDictDataController.Add(AXL.Model.System.SysDictData)">
+            <summary>
+            添加
+            </summary>
+            <param name="dict"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysDictDataController.Edit(AXL.Model.System.SysDictData)">
+            <summary>
+            修改
+            </summary>
+            <param name="dict"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysDictDataController.Remove(System.String)">
+            <summary>
+            删除字典类型
+            </summary>
+            <param name="dictCode"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Controllers.System.SysDictTypeController">
+            <summary>
+            数据字典信息
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysDictTypeController.List(AXL.Model.System.SysDictType,AXL.Model.PagerInfo)">
+            <summary>
+            查询
+            </summary>
+            <param name="dict"></param>
+            <param name="pagerInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysDictTypeController.GetInfo(System.Int64)">
+            <summary>
+            查询字典类型详细
+            </summary>
+            <param name="dictId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysDictTypeController.Add(AXL.Model.System.Dto.SysDictTypeDto)">
+            <summary>
+            添加字典类型
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysDictTypeController.Edit(AXL.Model.System.Dto.SysDictTypeDto)">
+            <summary>
+            修改字典类型
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysDictTypeController.Remove(System.String)">
+            <summary>
+            删除字典类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysDictTypeController.Export">
+            <summary>
+            字典导出
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Controllers.System.SysFileController">
+            <summary>
+            文件存储Controller
+            </summary>
+        </member>
+        <member name="F:AXL.Admin.WebApi.Controllers.System.SysFileController._SysFileService">
+            <summary>
+            文件存储接口
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysFileController.QuerySysFile(AXL.Model.System.Dto.SysFileQueryDto)">
+            <summary>
+            查询文件存储列表
+            </summary>
+            <param name="parm"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysFileController.GetSysFile(System.Int64)">
+            <summary>
+            查询文件存储详情
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysFileController.DeleteSysFile(System.String)">
+            <summary>
+            删除文件存储
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysFileController.Export">
+            <summary>
+            文件存储导出
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Controllers.System.SysLoginController">
+            <summary>
+            登录
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysLoginController.Login(AXL.Model.System.Dto.LoginBodyDto)">
+            <summary>
+            登录
+            </summary>
+            <param name="loginBody">登录对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysLoginController.LogOut">
+            <summary>
+            注销
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysLoginController.GetUserInfo">
+            <summary>
+            获取用户信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysLoginController.GetRouters">
+            <summary>
+            获取路由信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysLoginController.CaptchaImage">
+            <summary>
+            生成图片验证码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysLoginController.GenerateCaptcha(System.String,System.String)">
+            <summary>
+            生成图片验证码
+            </summary>
+            <param name="captchaOff"></param>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysLoginController.RecordLogInfo(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            记录用户登陆信息
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysLoginController.Register(AXL.Model.System.Dto.RegisterDto)">
+            <summary>
+            注册
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Controllers.System.SysMenuController">
+            <summary>
+            系统菜单
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysMenuController.TreeMenuList(AXL.Model.System.Dto.MenuQueryDto)">
+            <summary>
+            获取菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysMenuController.GetMenuInfo(System.Int32)">
+            <summary>
+            根据菜单编号获取详细信息
+            </summary>
+            <param name="menuId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysMenuController.GetMenuList(System.Int32)">
+            <summary>
+            根据菜单编号获取菜单列表，菜单管理首次进入
+            </summary>
+            <param name="menuId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysMenuController.RoleMenuTreeselect(System.Int32)">
+            <summary>
+            获取角色菜单信息
+            加载对应角色菜单列表树
+            </summary>
+            <param name="roleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysMenuController.MenuEdit(AXL.Model.System.Dto.MenuDto)">
+            <summary>
+            修改菜单
+            </summary>
+            <param name="menuDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysMenuController.MenuAdd(AXL.Model.System.Dto.MenuDto)">
+            <summary>
+            添加菜单
+            </summary>
+            <param name="menuDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysMenuController.Remove(System.Int32)">
+            <summary>
+            菜单删除
+            </summary>
+            <param name="menuId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysMenuController.ChangeSort(System.Int32,System.Int32)">
+            <summary>
+            保存排序
+            </summary>
+            <param name="id"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Controllers.System.SysNoticeController">
+            <summary>
+            系统通知
+            </summary>
+        </member>
+        <member name="F:AXL.Admin.WebApi.Controllers.System.SysNoticeController._SysNoticeService">
+            <summary>
+            通知公告表接口
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysNoticeController.QueryNotice(AXL.Model.System.Dto.SysNoticeQueryDto)">
+            <summary>
+            查询通知公告表列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysNoticeController.QuerySysNotice(AXL.Model.System.Dto.SysNoticeQueryDto)">
+            <summary>
+            查询通知公告表列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysNoticeController.GetSysNotice(System.Int32)">
+            <summary>
+            查询通知公告表详情
+            </summary>
+            <param name="NoticeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysNoticeController.AddSysNotice(AXL.Model.System.Dto.SysNoticeDto)">
+            <summary>
+            添加通知公告表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysNoticeController.UpdateSysNotice(AXL.Model.System.Dto.SysNoticeDto)">
+            <summary>
+            更新通知公告表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysNoticeController.SendNotice(System.Int32)">
+            <summary>
+            发送通知公告表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysNoticeController.DeleteSysNotice(System.String)">
+            <summary>
+            删除通知公告表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysNoticeController.Export">
+            <summary>
+            通知公告表导出
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Controllers.System.SysPostController">
+            <summary>
+            岗位管理
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysPostController.List(AXL.Model.System.SysPost,AXL.Model.PagerInfo)">
+            <summary>
+            岗位列表查询
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysPostController.Query(System.Int64)">
+            <summary>
+            岗位查询
+            </summary>
+            <param name="postId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysPostController.Add(AXL.Model.System.SysPost)">
+            <summary>
+            岗位管理
+            </summary>
+            <param name="post"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysPostController.Update(AXL.Model.System.SysPost)">
+            <summary>
+            岗位管理
+            </summary>
+            <param name="post"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysPostController.Delete(System.String)">
+            <summary>
+            岗位删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysPostController.Optionselect">
+            <summary>
+            获取岗位选择框列表
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysPostController.Export">
+            <summary>
+            岗位导出
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Controllers.System.SysProfileController">
+            <summary>
+            个人中心
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysProfileController.Profile">
+            <summary>
+            个人中心用户信息获取
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysProfileController.UpdateProfile(AXL.Model.System.Dto.SysUserDto)">
+            <summary>
+            修改用户
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysProfileController.UpdatePwd(System.String,System.String)">
+            <summary>
+            修改密码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysProfileController.Avatar(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            修改头像
+            </summary>
+            <param name="formFile"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Controllers.System.SysRoleController">
+            <summary>
+            角色信息
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysRoleController.List(AXL.Model.System.SysRole,AXL.Model.PagerInfo)">
+            <summary>
+            获取系统角色管理
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysRoleController.GetInfo(System.Int64)">
+            <summary>
+            根据角色编号获取详细信息
+            </summary>
+            <param name="roleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysRoleController.RoleAdd(AXL.Model.System.SysRole)">
+            <summary>
+            添加角色
+            </summary>
+            <param name="sysRoleDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysRoleController.RoleEdit(AXL.Model.System.SysRole)">
+            <summary>
+            修改角色 √
+            </summary>
+            <param name="sysRoleDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysRoleController.DataScope(AXL.Model.System.SysRole)">
+            <summary>
+            根据角色分配菜单
+            </summary>
+            <param name="sysRoleDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysRoleController.Remove(System.String)">
+            <summary>
+            角色删除
+            </summary>
+            <param name="roleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysRoleController.ChangeStatus(AXL.Model.System.SysRole)">
+            <summary>
+            修改角色状态
+            </summary>
+            <param name="roleDto">角色对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysRoleController.Export">
+            <summary>
+            角色导出
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Controllers.System.SysUserController">
+            <summary>
+            用户管理
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysUserController.List(AXL.Model.System.SysUser,AXL.Model.PagerInfo)">
+            <summary>
+            用户管理 -> 获取用户
+            /system/user/list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysUserController.GetInfo(System.Int32)">
+            <summary>
+            用户管理 -> 编辑、添加用户获取用户，信息查询
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysUserController.AddUser(AXL.Model.System.SysUser)">
+            <summary>
+            添加用户
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysUserController.UpdateUser(AXL.Model.System.SysUser)">
+            <summary>
+            修改用户
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysUserController.ChangeStatus(AXL.Model.System.SysUser)">
+            <summary>
+            改变用户状态
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysUserController.Remove(System.Int32)">
+            <summary>
+            删除用户
+            </summary>
+            <param name="userid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysUserController.ResetPwd(AXL.Model.System.SysUser)">
+            <summary>
+            重置密码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysUserController.ImportData(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            导入
+            </summary>
+            <param name="formFile">使用IFromFile必须使用name属性否则获取不到文件</param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysUserController.ImportTemplateExcel">
+            <summary>
+            用户导入模板下载
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysUserController.UserExport(AXL.Model.System.SysUser)">
+            <summary>
+            用户导出
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Controllers.System.SysUserRoleController">
+            <summary>
+            用户角色管理
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysUserRoleController.GetList(AXL.Model.System.Dto.RoleUserQueryDto)">
+            <summary>
+            根据角色编号获取已分配的用户
+            </summary>
+            <param name="roleUserQueryDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysUserRoleController.Create(AXL.Model.System.Dto.RoleUsersCreateDto)">
+            <summary>
+            添加角色用户
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysUserRoleController.Delete(AXL.Model.System.Dto.RoleUsersCreateDto)">
+            <summary>
+            删除角色用户
+            </summary>
+            <param name="roleUsersCreateDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.SysUserRoleController.GetExcludeUsers(AXL.Model.System.Dto.RoleUserQueryDto)">
+            <summary>
+            获取未分配用户角色
+            </summary>
+            <param name="roleUserQueryDto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Controllers.System.TasksController">
+            <summary>
+            计划任务
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.TasksController.ListTask(AXL.Model.System.Dto.TasksQueryDto,AXL.Model.PagerInfo)">
+            <summary>
+            查询计划任务列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.TasksController.Get(System.String)">
+            <summary>
+            查询单个计划任务
+            </summary>
+            <param name="id">编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.TasksController.Create(AXL.Model.System.Dto.TasksCreateDto)">
+            <summary>
+            添加任务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.TasksController.Update(AXL.Model.System.Dto.TasksCreateDto)">
+            <summary>
+            更新任务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.TasksController.Delete(System.String)">
+            <summary>
+            删除任务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.TasksController.Start(System.String)">
+            <summary>
+            启动任务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.TasksController.Stop(System.String)">
+            <summary>
+            停止任务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.TasksController.Run(System.String)">
+            <summary>
+            定时任务立即执行一次
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.TasksController.Export">
+            <summary>
+            定时任务导出
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Controllers.System.TasksLogController">
+            <summary>
+            任务日志
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.TasksLogController.GetList(AXL.Model.PagerInfo,AXL.Model.System.Dto.TasksLogQueryDto)">
+            <summary>
+            查询日志
+            </summary>
+            <param name="queryDto"></param>
+            <param name="pager"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.TasksLogController.Delete(System.String)">
+            <summary>
+            删除定时任务调用日志
+            </summary>
+            <param name="jobIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.TasksLogController.Clean">
+            <summary>
+            清空日志
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Controllers.System.TasksLogController.Export">
+            <summary>
+            定时任务日志导出
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Extensions.DbExtension.InitDb(System.IServiceProvider)">
+            <summary>
+            初始化db
+            </summary>
+            <param name="service"></param>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Extensions.DbExtension.FilterData(System.Int32)">
+            <summary>
+            数据过滤
+            </summary>
+            <param name="configId">多库id</param>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Extensions.HttpContextExtension">
+            <summary>
+            HttpContext扩展类
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Extensions.HttpContextExtension.IsAjaxRequest(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            是否是ajax请求
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Extensions.HttpContextExtension.GetClientUserIp(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            获取客户端IP
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Extensions.HttpContextExtension.GetUId(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            获取登录用户id
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Extensions.HttpContextExtension.GetName(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            获取登录用户名
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Extensions.HttpContextExtension.IsAdmin(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            判断是否是管理员
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Extensions.HttpContextExtension.GetClaims(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            ClaimsIdentity
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Extensions.HttpContextExtension.GetToken(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            获取请求令牌
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Extensions.HttpContextExtension.GetRequestValue(Microsoft.AspNetCore.Http.HttpContext,AXL.Model.System.SysOperLog)">
+            <summary>
+            设置请求参数
+            </summary>
+            <param name="operLog"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Extensions.SwaggerExtension.UseSwagger(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+             <summary>
+            
+             </summary>
+             <param name="app"></param>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Extensions.TasksExtension">
+            <summary>
+            定时任务扩展方法
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Extensions.TasksExtension.UseAddTaskSchedulers(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            程序启动后添加任务计划
+            </summary>
+            <param name="app"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Filters.ActionPermissionFilter">
+            <summary>
+            API授权判断
+            </summary>
+        </member>
+        <member name="P:AXL.Admin.WebApi.Filters.ActionPermissionFilter.Permission">
+            <summary>
+            权限字符串，例如 system:user:view
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Filters.ActionPermissionFilter.OnActionExecutionAsync(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext,Microsoft.AspNetCore.Mvc.Filters.ActionExecutionDelegate)">
+            <summary>
+            执行Action前校验是否有权限访问
+            </summary>
+            <param name="context"></param>
+            <param name="next"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Filters.GlobalActionMonitor.OnActionExecutionAsync(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext,Microsoft.AspNetCore.Mvc.Filters.ActionExecutionDelegate)">
+            <summary>
+            Action请求前
+            </summary>
+            <param name="context"></param>
+            <param name="next"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Filters.GlobalActionMonitor.OnResultExecuted(Microsoft.AspNetCore.Mvc.Filters.ResultExecutedContext)">
+            <summary>
+            OnActionExecuted是在Action中的代码执行之后运行的方法。
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Filters.GlobalExceptionFilter">
+            <summary>
+            全局异常捕获
+            暂时没用了，改为中间件 2021-2-26
+            </summary>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Filters.VerifyAttribute">
+            <summary>
+            授权校验访问
+            如果跳过授权登录在Action 或controller加上 AllowAnonymousAttribute
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Filters.VerifyAttribute.OnAuthorization(Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext)">
+            <summary>
+            只判断token是否正确，不判断权限
+            如果需要判断权限的在Action上加上ApiActionPermission属性标识权限类别，ActionPermissionFilter作权限处理
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:AXL.Admin.WebApi.Framework.JwtUtil">
+            <summary>
+            2020-11-20
+            </summary>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Framework.JwtUtil.GetLoginUser(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            获取用户身份信息
+            </summary>
+            <param name="httpContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Framework.JwtUtil.GenerateJwtToken(System.Collections.Generic.List{System.Security.Claims.Claim},AXL.Infrastructure.JwtSettings)">
+            <summary>
+            生成token
+            </summary>
+            <param name="claims"></param>
+            <param name="jwtSettings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Framework.JwtUtil.ValidParameters">
+            <summary>
+            验证Token
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Framework.JwtUtil.ParseToken(System.String)">
+            <summary>
+            从令牌中获取数据声明
+            </summary>
+            <param name="token">令牌</param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Framework.JwtUtil.ValidateJwtToken(System.Collections.Generic.IEnumerable{System.Security.Claims.Claim})">
+            <summary>
+            jwt token校验
+            </summary>
+            <param name="jwtToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Framework.JwtUtil.AddClaims(AXL.Model.System.LoginUser)">
+             <summary>
+            组装Claims
+             </summary>
+             <param name="user"></param>
+             <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Hubs.MessageHub.OnConnectedAsync">
+            <summary>
+            客户端连接的时候调用
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Hubs.MessageHub.OnDisconnectedAsync(System.Exception)">
+            <summary>
+            连接终止时调用。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AXL.Admin.WebApi.Hubs.MessageHub.SendMessage(System.String,System.String,System.String)">
+            <summary>
+            注册信息
+            </summary>
+            <param name="connectId"></param>
+            <param name="userName"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="P:AXL.Admin.WebApi.Hubs.OnlineUsers.ConnnectionId">
+            <summary>
+            客户端连接Id
+            </summary>
+        </member>
+        <member name="P:AXL.Admin.WebApi.Hubs.OnlineUsers.Userid">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:AXL.Admin.WebApi.Middleware.GlobalExceptionMiddleware" -->
+    </members>
+</doc>
